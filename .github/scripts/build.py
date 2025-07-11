@@ -23,6 +23,7 @@ The exported files will be placed in the specified output directory (default: _s
 import subprocess
 from typing import List, Union
 from pathlib import Path
+import shutil
 
 import jinja2
 import fire
@@ -133,6 +134,18 @@ def _generate_index(output_dir: Path, template_file: Path, notebooks_data: List[
         logger.error(f"Error rendering template: {e}")
 
 
+def _copy_static_dirs(output_dir: Path, dirs: List[Path]) -> None:
+    """Copy static directories like images or files into the output directory."""
+    for src in dirs:
+        if not src.exists():
+            logger.warning(f"Static directory not found: {src}")
+            continue
+        dest = output_dir / src.name
+        if dest.exists():
+            shutil.rmtree(dest)
+        shutil.copytree(src, dest)
+
+
 def _export(folder: Path, output_dir: Path, as_app: bool=False) -> List[dict]:
     """Export all marimo notebooks in a folder to HTML/WebAssembly format.
 
@@ -219,6 +232,9 @@ def main(
 
     # Generate the index.html file that lists all notebooks and apps
     _generate_index(output_dir=output_dir, notebooks_data=notebooks_data, apps_data=apps_data, template_file=template_file)
+
+    # Copy static resources such as files and images
+    _copy_static_dirs(output_dir, [Path("files"), Path("images")])
 
     logger.info(f"Build completed successfully. Output directory: {output_dir}")
 
