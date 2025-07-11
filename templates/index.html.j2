@@ -47,6 +47,14 @@
       gap: 20px;
       margin: 20px 0;
     }
+    .sections {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+    }
+    .sections section {
+      flex: 1 0 300px;
+    }
     .card {
       background-color: #f9f9f9;
       border: 1px solid #ddd;
@@ -96,49 +104,55 @@
     </header>
 
     <main class="container">
+      <div class="sections">
 
-    {% if notebooks %}
-    <h2 class="section-title">Notebooks</h2>
-    <p>Interactive notebooks in edit mode - you can modify and experiment with the code</p>
-    <div class="cards">
-      {% for notebook in notebooks %}
-      <!-- {{ notebook.display_name }} Notebook -->
-      <div class="card">
-        <div class="card-header">{{ notebook.display_name }}</div>
-        <div class="card-body">
-          <a href="{{ notebook.html_path }}" class="card-link">Open Notebook</a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
+        {% if notebooks %}
+        <section class="notebooks-section">
+          <h2 class="section-title">Notebooks</h2>
+          <p>Interactive notebooks in edit mode - you can modify and experiment with the code</p>
+          <div class="cards">
+            {% for notebook in notebooks %}
+            <!-- {{ notebook.display_name }} Notebook -->
+            <div class="card">
+              <div class="card-header">{{ notebook.display_name }}</div>
+              <div class="card-body">
+                <a href="{{ notebook.html_path }}" class="card-link">Open Notebook</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
 
-    {% if apps %}
-    <h2 class="section-title">Apps</h2>
-    <p>Interactive applications in run mode - code is hidden for a clean user interface</p>
-    <div class="cards">
-      {% for app in apps %}
-      <!-- {{ app.display_name }} App -->
-      <div class="card">
-        <div class="card-header app">{{ app.display_name }}</div>
-        <div class="card-body">
-          <a href="{{ app.html_path }}" class="card-link app">Open App</a>
-        </div>
+        {% if apps %}
+        <section class="apps-section">
+          <h2 class="section-title">Apps</h2>
+          <p>Interactive applications in run mode - code is hidden for a clean user interface</p>
+          <div class="cards">
+            {% for app in apps %}
+            <!-- {{ app.display_name }} App -->
+            <div class="card">
+              <div class="card-header app">{{ app.display_name }}</div>
+              <div class="card-body">
+                <a href="{{ app.html_path }}" class="card-link app">Open App</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
       </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </main>
+    </main>
 
     <footer>
       <div class="container">
-        <p>Built with <a href="https://marimo.io" target="_blank">marimo</a> - Interactive Python notebooks</p>
+        <p>Built with <a href="https://marimo.io" target="_blank">marimo</a> - Interactive Python notebooks | ©2020 Will Held</p>
         <div class="footer-links">
           <a href="https://github.com/marimo-team/marimo" target="_blank">GitHub</a>
           <a href="https://docs.marimo.io" target="_blank">Documentation</a>
           <a href="https://discord.gg/JE7nhX6mD8" target="_blank">Discord</a>
         </div>
-        <p>Licensed under <a href="https://github.com/marimo-team/marimo/blob/main/LICENSE" target="_blank">Apache License 2.0</a></p>
       </div>
     </footer>
 
