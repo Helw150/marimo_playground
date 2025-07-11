@@ -17,6 +17,8 @@
     .paper-buttons { margin-top: 2px; }
     .paper .button { display: inline-block; height: 20px; padding: 0 5px; font-weight: 100; line-height: 20px; margin-bottom: 0; text-transform: none; }
     .docs-section { border-top: 1px solid #eee; padding: 4rem 0; }
+    .scroll-container { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; }
+    .scroll-container .paper { display: inline-block; margin-right: 10px; vertical-align: top; }
     footer { text-align: center; color: rgba(0,0,0,0.4); border-top: 1px solid #eee; padding: 15px 0 40px; }
   </style>
 </head>
@@ -36,7 +38,7 @@
     </section>
 
     <div class="row">
-      <div class="four columns">
+      <div class="six columns">
         <h5>General</h5>
         <ul>
           <li><a rel="me" href="https://www.threads.net/@william.held">Threads</a></li>
@@ -45,7 +47,7 @@
           <li><a href="https://github.com/Helw150">Github</a></li>
         </ul>
       </div>
-      <div class="four columns">
+      <div class="six columns">
         <h5>Academic</h5>
         <ul>
           <li><a href="files/res.pdf">Resume</a></li>
@@ -54,44 +56,46 @@
           <li><a href="https://dblp.org/pid/245/8601.html">DBLP</a></li>
         </ul>
       </div>
-      <div class="four columns">
-        <h5>Talks</h5>
-        <ul>
-          <li><a href="https://rsvp.withgoogle.com/events/foundation-models-workshop-2024">Google Research</a> <span class="u-pull-right">Distilled Voice Assistant</span></li>
-          <li><a href="https://dschool.stanford.edu/classes/design-for-learning">Stanford d.school</a> <span class="u-pull-right">Prompting Tutorial</span></li>
-          <li><a href="https://www.cc.gatech.edu/classes/AY2024/cs7643_fall/">Georgia Tech CS 7643</a> <span class="u-pull-right">LLM Lecture</span></li>
-        </ul>
-      </div>
     </div>
   </div>
 
   {% if notebooks or apps %}
   <div class="container docs-section">
-    {% if notebooks %}
-    <h4>Notebooks</h4>
-    {% for notebook in notebooks %}
-    <!-- {{ notebook.display_name }} Notebook -->
-    <div class="paper">
-      <p class="title">{{ notebook.display_name }}</p>
-      <div class="paper-buttons">
-        <a href="{{ notebook.html_path }}" class="button">Open Notebook</a>
+    <div class="row">
+      {% if notebooks %}
+      <div class="six columns">
+        <h4>Notebooks</h4>
+        <div class="scroll-container">
+          {% for notebook in notebooks %}
+          <!-- {{ notebook.display_name }} Notebook -->
+          <div class="paper">
+            <p class="title">{{ notebook.display_name }}</p>
+            <div class="paper-buttons">
+              <a href="{{ notebook.html_path }}" class="button">Open Notebook</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
-    </div>
-    {% endfor %}
-    {% endif %}
+      {% endif %}
 
-    {% if apps %}
-    <h4>Apps</h4>
-    {% for app in apps %}
-    <!-- {{ app.display_name }} App -->
-    <div class="paper">
-      <p class="title">{{ app.display_name }}</p>
-      <div class="paper-buttons">
-        <a href="{{ app.html_path }}" class="button">Open App</a>
+      {% if apps %}
+      <div class="six columns">
+        <h4>Apps</h4>
+        <div class="scroll-container">
+          {% for app in apps %}
+          <!-- {{ app.display_name }} App -->
+          <div class="paper">
+            <p class="title">{{ app.display_name }}</p>
+            <div class="paper-buttons">
+              <a href="{{ app.html_path }}" class="button">Open App</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
+      {% endif %}
     </div>
-    {% endfor %}
-    {% endif %}
   </div>
   {% endif %}
 
