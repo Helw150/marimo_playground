@@ -5,82 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>William Held</title>
   <link rel="icon" href="images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body { font-family: 'Raleway', sans-serif; color: #222; }
+    h4 { letter-spacing: .1rem; text-transform: uppercase; }
+    .header { margin-top: 60px; margin-bottom: 60px; }
+    .paper { margin-bottom: 20px; line-height: 1.2; }
+    .paper p { margin-bottom: 2px; }
+    .paper-buttons { margin-top: 2px; }
+    .paper .button { display: inline-block; height: 20px; padding: 0 5px; font-weight: 100; line-height: 20px; margin-bottom: 0; text-transform: none; }
+    .docs-section { border-top: 1px solid #eee; padding: 4rem 0; }
+    footer { text-align: center; color: rgba(0,0,0,0.4); border-top: 1px solid #eee; padding: 15px 0 40px; }
+  </style>
 </head>
-<body class="font-[Inter] text-gray-800 bg-white antialiased">
-  <div class="max-w-3xl mx-auto p-8">
-    <div class="flex flex-col items-center text-center space-y-6 mb-10">
-      <img src="images/profile.jpeg" alt="Profile" class="w-40 h-40 rounded-full object-cover">
-      <h1 class="text-4xl font-semibold text-gray-900">William Held</h1>
-      <p class="text-lg text-gray-700">Researcher &amp; Engineer</p>
-      <p class="font-serif text-base leading-relaxed max-w-prose">Currently, Machine Learning PhD at <a href="https://ml.gatech.edu/" class="underline">Georgia Tech</a>, advised by <a href="https://cs.stanford.edu/~diyiy/group.html" class="underline">Diyi Yang</a> in the <a href="https://nlp.stanford.edu/" class="underline">Stanford NLP Group</a>. Before that, early engineer at <a href="https://www.sunshine.com" class="underline">Sunshine</a>. Focused on enabling inclusive language technology by modeling linguistic variation.</p>
-    </div>
+<body>
+  <div class="container">
+    <section class="header">
+      <div class="row">
+        <div class="three columns">
+          <img class="u-max-full-width" src="images/profile.jpeg" alt="Profile">
+        </div>
+        <div class="nine columns main-description">
+          <h1>William Held</h1>
+          <p>Researcher &amp; Engineer</p>
+          <p>Currently, Machine Learning PhD at <a href="https://ml.gatech.edu/">Georgia Tech</a>, advised by <a href="https://cs.stanford.edu/~diyiy/group.html">Diyi Yang</a> in the <a href="https://nlp.stanford.edu/">Stanford NLP Group</a>. Before that, early engineer at <a href="https://www.sunshine.com">Sunshine</a>. Focused on enabling inclusive language technology by modeling linguistic variation.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="grid md:grid-cols-3 gap-8 mb-10">
-      <div>
-        <h2 class="uppercase text-sm tracking-wider mb-2 text-gray-600">General</h2>
-        <ul class="font-serif space-y-1 text-base">
+    <div class="row">
+      <div class="four columns">
+        <h5>General</h5>
+        <ul>
           <li><a rel="me" href="https://www.threads.net/@william.held">Threads</a></li>
           <li><a href="https://twitter.com/WilliamBarrHeld">Twitter</a></li>
           <li><a href="https://www.linkedin.com/in/williambarrheld/">LinkedIn</a></li>
           <li><a href="https://github.com/Helw150">Github</a></li>
         </ul>
       </div>
-      <div>
-        <h2 class="uppercase text-sm tracking-wider mb-2 text-gray-600">Academic</h2>
-        <ul class="font-serif space-y-1 text-base">
+      <div class="four columns">
+        <h5>Academic</h5>
+        <ul>
           <li><a href="files/res.pdf">Resume</a></li>
           <li><a href="https://www.semanticscholar.org/author/William-B.-Held/46552910">Semantic Scholar</a></li>
           <li><a href="https://scholar.google.com/citations?user=SP9VJNkAAAAJ&amp;hl=en">Google Scholar</a></li>
           <li><a href="https://dblp.org/pid/245/8601.html">DBLP</a></li>
         </ul>
       </div>
-      <div>
-        <h2 class="uppercase text-sm tracking-wider mb-2 text-gray-600">Talks</h2>
-        <ul class="font-serif space-y-1 text-base">
-          <li><a href="https://rsvp.withgoogle.com/events/foundation-models-workshop-2024">Google Research</a><div class="text-sm text-gray-500 -mt-1">Distilled Voice Assistant</div></li>
-          <li><a href="https://dschool.stanford.edu/classes/design-for-learning">Stanford d.school</a><div class="text-sm text-gray-500 -mt-1">Prompting Tutorial</div></li>
-          <li><a href="https://www.cc.gatech.edu/classes/AY2024/cs7643_fall/">Georgia Tech CS 7643</a><div class="text-sm text-gray-500 -mt-1">LLM Lecture</div></li>
+      <div class="four columns">
+        <h5>Talks</h5>
+        <ul>
+          <li><a href="https://rsvp.withgoogle.com/events/foundation-models-workshop-2024">Google Research</a> <span class="u-pull-right">Distilled Voice Assistant</span></li>
+          <li><a href="https://dschool.stanford.edu/classes/design-for-learning">Stanford d.school</a> <span class="u-pull-right">Prompting Tutorial</span></li>
+          <li><a href="https://www.cc.gatech.edu/classes/AY2024/cs7643_fall/">Georgia Tech CS 7643</a> <span class="u-pull-right">LLM Lecture</span></li>
         </ul>
       </div>
     </div>
 
-    <p class="text-sm text-gray-500 text-center">©2020 Will Held</p>
+    <p style="text-align:center;">©2020 Will Held</p>
   </div>
 
   {% if notebooks or apps %}
-  <div class="bg-white text-gray-800 py-8 px-4">
+  <div class="container docs-section">
     {% if notebooks %}
-    <h2 class="text-xl font-bold text-center my-4">Notebooks</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-      {% for notebook in notebooks %}
-      <!-- {{ notebook.display_name }} Notebook -->
-      <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-        <div class="bg-gray-200 p-3 font-semibold">{{ notebook.display_name }}</div>
-        <div class="p-4">
-          <a href="{{ notebook.html_path }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition-colors">Open Notebook</a>
-        </div>
+    <h4>Notebooks</h4>
+    {% for notebook in notebooks %}
+    <!-- {{ notebook.display_name }} Notebook -->
+    <div class="paper">
+      <p class="title">{{ notebook.display_name }}</p>
+      <div class="paper-buttons">
+        <a href="{{ notebook.html_path }}" class="button">Open Notebook</a>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
     {% endif %}
 
     {% if apps %}
-    <h2 class="text-xl font-bold text-center my-4">Apps</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {% for app in apps %}
-      <!-- {{ app.display_name }} App -->
-      <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-        <div class="bg-gray-100 p-3 font-semibold">{{ app.display_name }}</div>
-        <div class="p-4">
-          <a href="{{ app.html_path }}" class="inline-block bg-amber-500 hover:bg-amber-600 text-white py-1 px-3 rounded transition-colors">Open App</a>
-        </div>
+    <h4>Apps</h4>
+    {% for app in apps %}
+    <!-- {{ app.display_name }} App -->
+    <div class="paper">
+      <p class="title">{{ app.display_name }}</p>
+      <div class="paper-buttons">
+        <a href="{{ app.html_path }}" class="button">Open App</a>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
     {% endif %}
   </div>
   {% endif %}
+
+  <footer>
+    Built with <a href="https://marimo.io">marimo</a>
+  </footer>
 </body>
 </html>
