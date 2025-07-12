@@ -19,6 +19,17 @@
     .docs-section { border-top: 1px solid #eee; padding: 4rem 0; }
     .scroll-container { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; }
     .scroll-container .paper { display: inline-block; margin-right: 10px; vertical-align: top; }
+    .publications-list {
+      max-height: 450px;
+      overflow-y: auto;
+    }
+    .publications-header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 1;
+      padding-bottom: 5px;
+    }
     footer { text-align: center; color: rgba(0,0,0,0.4); border-top: 1px solid #eee; padding: 15px 0 40px; }
     .profile-pic {
       border-radius: 50%;
@@ -98,7 +109,8 @@
 </section>
 
   <div class="container docs-section" id="publications">
-    <h4>Publications</h4>
+    <h4 class="publications-header">Publications</h4>
+    <div class="publications-list">
     <div class="paper">
       <p class="title"><a href="https://marin.community/blog/2025/05/19/announcement/">Marin: An Open Lab for Building Foundation Models</a></p>
       <p>David Hall, Ahmed Ahmed, Christopher Chou, Abhinav Garg, Rohith Kuditipudi, <strong>Will Held</strong>, … Percy Liang</p>
@@ -223,6 +235,7 @@
       <p><strong>William Held</strong>, Andrew Bradley</p>
       <p><i>Sandia National Labs Center for Computing Research Summer Proceedings, 2015</i></p>
     </div>
+  </div>
   </div>
 
   {% if notebooks or apps %}
